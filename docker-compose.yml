@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+
+  database:
+    container_name: database
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+  app:
+    container_name: app
+    build:
+      context: .
+      target: development
+    environment:
+      - DJANGO_POSTGRES_DATABASE=postgres
+      - DJANGO_POSTGRES_USER=postgres
+      - DJANGO_POSTGRES_PASSWORD=postgres
+      - DJANGO_POSTGRES_HOST=database
+      - DJANGO_POSTGRES_PORT=5432
+    depends_on:
+      - database
+    volumes:
+      - .:/app/
+    ports:
+      - "8000:8000"
