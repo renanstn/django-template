@@ -1,2 +1,3 @@
 # django-template
-My official template to a django dockerized app
+
+Just a template to a dockerized django app.
