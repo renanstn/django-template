@@ -4,8 +4,9 @@
 FROM python:3.9 AS base
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
-RUN pip install --upgrade pip
-RUN pip install poetry
+RUN apt-get update && \
+    pip install --upgrade pip && \
+    pip install poetry
 WORKDIR /app
 COPY pyproject.toml poetry.lock /app/
 
@@ -18,7 +19,7 @@ RUN poetry config virtualenvs.create false && \
 COPY . /app/
 RUN chmod +x /app/scripts/*.sh
 ENTRYPOINT [ "scripts/entrypoint.sh" ]
-CMD [ "scripts/start.sh"]
+CMD [ "scripts/start.sh", "development" ]
 
 # =============================================================================
 # Production
@@ -28,5 +29,5 @@ RUN poetry config virtualenvs.create false && \
     poetry install --no-dev --no-interaction --no-ansi
 COPY . /app/
 RUN chmod +x /app/*.sh
-ENTRYPOINT [ "entrypoint.sh" ]
-CMD [ "start.sh", "server" ]
+ENTRYPOINT [ "scripts/entrypoint.sh" ]
+CMD [ "scripts/start.sh", "production" ]
