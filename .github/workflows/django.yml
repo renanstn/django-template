@@ -37,9 +37,6 @@ jobs:
         poetry install --no-interaction --no-ansi
     - name: Run Tests
       env:
-        DB: ${{ matrix.db }}
-        DB_HOST: 127.0.0.1
-        DB_PORT: ${{ matrix.db_port }}
-        DB_PASSWORD: postgres
+        DATABASE_URL: postgres://postgres:postgres@${{ matrix.db }}:${{ matrix.db_port }}/postgres
       run: |
         python manage.py test
