@@ -44,6 +44,6 @@ jobs:
         python manage.py migrate
     - name: Run Tests
       env:
-        DATABASE_URL: postgres://postgres:postgres@${{ matrix.db }}:${{ matrix.db_port }}/postgres
+        DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/postgres
       run: |
         python manage.py test
