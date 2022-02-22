@@ -87,12 +87,6 @@ DATABASE_URL = config(
     default="postgres://postgres:postgres@database:5432/postgres",
 )
 
-import os
-DATABASE_URL = os.environ.get("DATABASE_URL")
-
-print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-print(DATABASE_URL)
-
 DATABASES = {
     "default": dj_database_url.parse(DATABASE_URL),
 }
