@@ -9,3 +9,7 @@
 Just a template to a dockerized django-rest app.
 
 I used [this article](https://faun.pub/the-near-perfect-dockerfile-for-django-applications-8bc352a1e871) as example.
+
+## Additions
+
+- GitHub actions with Postgres integration for tests
