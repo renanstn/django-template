@@ -39,6 +39,9 @@ jobs:
         pip install poetry
         poetry config virtualenvs.create false
         poetry install --no-interaction --no-ansi
+    - name: Run migrations
+      run: |
+        python manage.py migrate
     - name: Run Tests
       env:
         DATABASE_URL: postgres://postgres:postgres@${{ matrix.db }}:${{ matrix.db_port }}/postgres
