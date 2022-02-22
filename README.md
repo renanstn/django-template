@@ -14,4 +14,6 @@ Just a good template to a dockerized django-rest app.
 - Use [Poetry](https://python-poetry.org/) as dependency manager
 - Use [Black](https://black.readthedocs.io/en/stable/) as code formatter
 - Use [django-extensions](https://django-extensions.readthedocs.io/en/latest/) to provide some nice tools (like `plus_shell`)
+- Automatically run `collectstatic`, `makemigrations` and `migrate` when the container up
+- Automatically create an `superuser` if not exists
 - GitHub actions configured, with Postgres integration for tests
