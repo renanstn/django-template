@@ -7,10 +7,10 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Django CI](https://github.com/renanstn/django-template/actions/workflows/django.yml/badge.svg)](https://github.com/renanstn/django-template/actions/workflows/django.yml)
 
-Just a template to a dockerized django-rest app.
+Just a good template to a dockerized django-rest app.
 
-I used [this article](https://faun.pub/the-near-perfect-dockerfile-for-django-applications-8bc352a1e871) as example.
+## Features
 
-## Additions
-
-- GitHub actions with Postgres integration for tests
+- Use [Black](https://black.readthedocs.io/en/stable/) as code formatter
+- Use [django-extensions](https://django-extensions.readthedocs.io/en/latest/) to provide some nice tools (like `plus_shell`)
+- GitHub actions configured, with Postgres integration for tests
