@@ -3,6 +3,6 @@ from myapp import models
 
 
 class TestModels(TestCase):
-    def test_populate_test_model(self):
+    def test_populate_model(self):
         models.Test.objects.create(name="test")
         assert models.Test.objects.filter(name="test").exists()
