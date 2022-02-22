@@ -87,6 +87,9 @@ DATABASE_URL = config(
     default="postgres://postgres:postgres@database:5432/postgres",
 )
 
+print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+print(DATABASE_URL)
+
 DATABASES = {
     "default": dj_database_url.parse(DATABASE_URL),
 }
