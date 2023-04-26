@@ -5,7 +5,7 @@ FROM python:3.9 AS base
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 RUN apt-get update && \
-    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir --upgrade pip==23.1.2 && \
     pip install --no-cache-dir poetry==1.4.2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
