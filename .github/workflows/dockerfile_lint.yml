@@ -1,2 +1,7 @@
-- name: Hadolint Action
-  uses: hadolint/hadolint-action@v3.1.0
+name: Lint Dockerfile
+
+jobs:
+  lint:
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hadolint/hadolint-action@v3.1.0
