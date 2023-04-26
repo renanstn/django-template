@@ -6,7 +6,9 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 RUN apt-get update && \
     pip install --upgrade pip && \
-    pip install poetry
+    pip install --no-cache-dir poetry==1.4.2 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY pyproject.toml poetry.lock /app/
 
