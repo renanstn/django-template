@@ -6,6 +6,7 @@
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Django CI](https://github.com/renanstn/django-template/actions/workflows/django.yml/badge.svg)](https://github.com/renanstn/django-template/actions/workflows/django.yml)
+![Dockerfile lint](https://github.com/renanstn/django-template/actions/workflows/dockerfile_lint.yml/badge.svg)
 
 Just a good template to a dockerized django-rest app.
 
